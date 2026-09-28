@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>React Profile Card</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Profile Card Component
+        function ProfileCard(props) {
+            return (
+                <div className="profile-card">
+
+                    <img
+                        src={props.image}
+                        alt={props.name}
+                        className="profile-image"
+                    />
+
+                    <h1>{props.name}</h1>
+
+                    <p>{props.description}</p>
+
+                </div>
+            );
+        }
+
+
+        // App Component
+        function App() {
+            return (
+                <div className="container">
+
+                    <h2>React Profile Card</h2>
+
+                    <ProfileCard
+                        name="Tanvi Ballal"
+                        image="https://i.pravatar.cc/300?img=47"
+                        description="MCA Student and aspiring software developer."
+                    />
+                    
+                 </div>
+            );
+        }
+
+
+        // Render React App
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(<App />);
+
+    </script>
+
+</body>
+</html>
